@@ -1,0 +1,30 @@
+﻿<input ="text" value="10" id="txtBox"/>
+<br />
+<input type="button" value="start Timer" onclick="startTimer('txtbox')"/>
+<input type="button" value="stop Timer" onclick="stopTimer()" />
+
+<script type="text/javascript">
+    var intervalID;
+
+    function startTimer(controlID) {
+        var control = document.getElementById("controlID");
+        var seconds = control.value;
+
+        seconds = seconds - 1;
+
+        if (seconds == 0) {
+            control.value = "Done";
+            return;
+        }
+        else {
+            control.value = seconds;
+        }
+    }
+
+    intervalID = setTimeout(function () { startTimer("txtBox") }, 1000);
+
+    function stopTimer() {
+        clearTimeout(intervalID);
+    }
+
+</script>
