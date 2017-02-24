@@ -1,0 +1,35 @@
+﻿<table>
+    <tr>
+        <td>
+            FIRST NAME:
+        </td>
+        <td>
+            <input type="text" id="txtFirstName" onkeyup="validateRequiredField('txtFirstName')" onblur="validateRequiredField('txtFirstName')" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            LAST NAME:
+        </td>
+        <td>
+            <input type="text" id="txtLastName" onkeyup="validateRequiredField('txtLastName')" onblur="validateRequiredField('txtLastName')" />
+        </td>
+    </tr>
+</table>
+<script type="text/javascript">
+    function validateRequiredField(controlId) {
+        var control = document.getElementById(contolId);
+        control.style.color = white;
+
+        if (control.value == "") {
+            control.style.background = 'red';
+        }
+        else {
+            control.style.background = 'green';
+        }
+
+    }
+</script>
+
+
+
