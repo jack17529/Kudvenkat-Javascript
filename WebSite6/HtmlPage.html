@@ -1,0 +1,21 @@
+﻿<input type="button" value="click me" id="button" onclick="getEventDetails(event)" onmousemove ="getEventDetails(event)" onmouseout ="getEventDetails(event)" />
+<br/>
+<div id="result">
+
+</div>
+<script type="text/javascript">
+    var sourceElement;
+
+    if (event.srcElement) {
+        sourceElement = event.srcElement;
+    }
+    else {
+        sourceElement = event.target;
+    }
+    function getEventDetails(event) {
+        var eventDetails = "Event name = " + event.type + "<br/> X = " + event.clientX +
+                            "<br/> Y = " + event.clientY + "<br/> Target Type = " + sourceElement.type + "<br/> Target Tag Name = " + sourceElement.tagName;
+
+        document.getElementById("result").innerHTML = eventDetails;
+    }
+</script>
