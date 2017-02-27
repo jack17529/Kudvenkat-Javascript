@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .styleClass{
+            display:table-cell;
+            border:1px solid black;
+            padding:20px;
+            text-align:center;   
+        }
+    </style>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div id="div1" class="styleClass">
+        DIV1
+        <div id="div2" class="styleClass">
+            DIV2
+            <div id="div3" class="styleClass">
+                DIV3
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var divElement = document.getElementsByTagName('div');
+
+        for (var i = 0; i < divElement.length; i++) {
+            divElement[i].onclick = function () {
+                this.style.borderColor = 'red';
+                alert(this.getAttribute("id") + "color is changed");
+            }
+        }
+    </script>
+</body>
+</html>
