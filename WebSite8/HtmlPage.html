@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .imgStyle{
+            height:100px;
+            width:100px;
+            border:3px solid grey;
+        }
+    </style>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <img height="540px" width="540px" style="border:3px solid grey"
+         src="/Images/2.jpg" id="mainImage" />
+    <br />
+    <div id="myDiv" onclick="changeImage(event)">
+    <img class="imgStyle" src="/Images/2.jpg" />
+    <img class="imgStyle" src="/Images/3.jpg" />
+    <img class="imgStyle" src="/Images/4.jpg" />
+    <img class="imgStyle" src="/Images/8.jpg" />
+    <img class="imgStyle" src="/Images/9.jpg" />
+    </div>
+
+    <script type="text/javascript">
+        var images = document.getElementById("myDiv").getElementsByTagName("img");
+
+        for (var i = 0; i < images.length; i++) {
+            images[i].onmouseover = function () {
+                this.style.cursor = 'hand';
+                this.style.borderColor = 'red';
+            }
+            images[i].onmouseout = function () {
+                this.style.cursor = 'pointer';
+                this.style.borderColor = 'grey';
+            }
+        }
+
+
+        function changeImage(event) {
+            event = event || window.event;
+
+            var targetElement = event.target || event.srcElement;
+
+            if(targetElement.tagName == "IMG"){
+            document.getElementById("mainImage").src = targetElement.getAttribute("src");
+            }
+        }
+    </script>
+</body>
+</html>
