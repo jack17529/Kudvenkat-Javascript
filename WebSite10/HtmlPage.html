@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <a href="http://pragimtech.com" onclick="preventDefaultAction(event)" >go to pragimtech</a>
+
+    <script type="text/javascript">
+        document.oncontextmenu = preventDefaultAction;
+
+        function preventDefaultAction(event) {
+            event = event || window.event;
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+            else {
+                event.returnValue = false;
+            }
+        }
+    </script>
+</body>
+</html>
