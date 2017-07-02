@@ -1,0 +1,20 @@
+﻿<script type="text/javascript">
+    function Shape(shapeName) {
+        this.ShapeName = shapeName;
+        Shape.count = ++Shape.count || 1;
+
+       // circle.pi = 3.141;
+
+        Shape.showCount = function()
+        {
+            return Shape.count;
+        }
+    }
+
+    var shape1 = new Shape("cicle");
+    var shape2 = new Shape("rectangle");
+    var shape3 = new Shape("triangle");
+
+    document.write("shape count = " + Shape.showCount());
+
+</script>
