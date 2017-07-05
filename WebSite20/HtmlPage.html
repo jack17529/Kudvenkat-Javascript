@@ -1,0 +1,17 @@
+﻿<input type="button" value="set cookie" onclick="setCookie()" />
+<input type="button" value="get cookie" onclick="getCookie()" />
+<script type="text/javascript">
+    function setCookie() {
+        document.cookie = "color=red";
+    }
+
+    function getCookie() {
+        if (document.cookie.length != 0) {
+            var newArry = document.cookie.split("=");
+            alert("Name = " + newArry[0] + "Value = " + newArry[1]);
+        }
+        else {
+            alert("no cookie is selected");
+        }
+    }
+</script>
