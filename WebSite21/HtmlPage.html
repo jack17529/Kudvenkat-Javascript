@@ -1,0 +1,19 @@
+﻿<div id="msg">
+</div>
+<script type="text/javascript">
+    function cookieEnabled() {
+        var areCookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+        if(typeof navigator.cookieEnabled == "undefined" && !areCookieEnabled){
+            document.cookie = "mytextcookie";
+            areCookieEnabled = (document.cookie.indexOf("mytestcookie") != -1) ? true : false
+        }
+        return areCookieEnabled;
+    }
+
+    if (cookieEnabled()) {
+        document.getElementById("msg").innerHTML = "cookie are Enabled";
+    }
+    else {
+        document.getElementById("msg").innerHTML = "cookie are Disabled";
+    }
